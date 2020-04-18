@@ -16,7 +16,7 @@ import org.jsoup.nodes.Document;
 //for rest services
 import javax.ws.rs.*;
 
-@Path("/Doctorss")
+@Path("/DoctorsPrescriptions")
 public class DoctorService1
 {
 	
@@ -85,7 +85,7 @@ public class DoctorService1
 				//Convert the input string to an XML document
 				Document doc = Jsoup.parse(presData, "", Parser.xmlParser());
 
-				//Read the value from the element <itemID>
+				//Read the value from the element <ID>
 				String presID = doc.select("presID").text();
 				String output = doctorObj.deletePrescription(presID);
 				return output;
